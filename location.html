@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e192f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mura" />
+  <title>Location &mdash; Mura Sushi &amp; Korean Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========= COMPACT HERO ========= -->
+  <header class="hero hero--compact">
+    <div class="hero__overlay"></div>
+
+    <nav class="nav">
+      <a class="nav__logo" href="index.html">
+        <span class="nav__logo-main">mura</span>
+        <span class="nav__logo-sub">korean / japanese / sushi</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#menu">MENU</a></li>
+        <li><a href="location.html" class="is-active">LOCATION</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero__content">
+      <span class="hero__eyebrow">VISIT US</span>
+      <h1 class="hero__title hero__title--sm">LOCATION</h1>
+      <p class="hero__sub">1793 East 10th Street &middot; Bloomington, Indiana</p>
+    </div>
+  </header>
+
+  <!-- ========= MAP + DETAILS ========= -->
+  <section class="location">
+    <div class="location__inner">
+
+      <div class="location__map">
+        <div id="map" class="location__map-canvas" aria-label="Map of Mura Sushi &amp; Korean Restaurant"></div>
+      </div>
+
+      <div class="location__details">
+        <div class="location__col">
+          <h3>ADDRESS</h3>
+          <p>1793 E 10th St</p>
+          <p>Bloomington, IN &mdash; 47408</p>
+        </div>
+        <div class="location__col">
+          <h3>CONTACT</h3>
+          <p><a href="tel:8123694448">(812) 369-4448</a></p>
+        </div>
+        <div class="location__col">
+          <h3>HOURS</h3>
+          <p><em>Mon &mdash; Thu</em></p>
+          <p>11am &mdash; 10pm</p>
+          <p><em>Fri &mdash; Sat</em></p>
+          <p>11am &mdash; 11:30pm</p>
+          <p><em>Sunday</em></p>
+          <p>12pm &mdash; 10pm</p>
+        </div>
+      </div>
+
+      <div class="location__cta">
+        <a
+          class="btn btn--dark"
+          href="https://www.google.com/maps/dir/?api=1&destination=1793%20E%2010th%20St%20Bloomington%20IN%2047408"
+          target="_blank"
+          rel="noopener noreferrer">
+          GET DIRECTIONS &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__social">
+        <a href="https://www.facebook.com/people/Mura-Sushi-Korean-Restaurant-in-Bloomington-Indiana/100078651017884/?locale=en_GB"
+           target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/explore/locations/259487655964057/mura-sushi-korean-restaurant-in-bloomington-indiana/"
+           target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>LOCATION</h4>
+          <p>1793 E 10th St</p>
+          <p>Bloomington, IN &mdash; 47408</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>CONTACT</h4>
+          <p><a href="tel:8123694448">(812) 369-4448</a></p>
+        </div>
+
+        <div class="footer__col">
+          <h4>HOURS</h4>
+          <p><em>Monday &mdash; Thursday</em></p>
+          <p>11am &mdash; 10pm</p>
+          <p><em>Friday &mdash; Saturday</em></p>
+          <p>11am &mdash; 11:30pm</p>
+          <p><em>Sunday</em></p>
+          <p>12pm &mdash; 10pm</p>
+        </div>
+      </div>
+
+      <p class="footer__credit">Mura Sushi &amp; Korean Restaurant</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var MURA_LNG = -86.51615;
+      var MURA_LAT = 39.17140;
+      var directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=1793%20E%2010th%20St%20Bloomington%20IN%2047408';
+
+      var map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+        center: [MURA_LNG, MURA_LAT],
+        zoom: 15.2,
+        attributionControl: { compact: true }
+      });
+
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }), 'top-right');
+
+      map.on('load', function () {
+        var el = document.createElement('a');
+        el.className = 'mura-marker';
+        el.href = directionsUrl;
+        el.target = '_blank';
+        el.rel = 'noopener noreferrer';
+        el.setAttribute('aria-label', 'Open directions to Mura in Google Maps');
+        el.innerHTML = '<span class="mura-marker__pin"></span><span class="mura-marker__label">MURA</span>';
+
+        var popup = new maplibregl.Popup({ offset: 34, closeButton: false })
+          .setHTML('<div class="mura-popup"><strong>Mura Sushi &amp; Korean</strong><br/>1793 E 10th St<br/>Bloomington, IN 47408</div>');
+
+        new maplibregl.Marker({ element: el, anchor: 'bottom' })
+          .setLngLat([MURA_LNG, MURA_LAT])
+          .setPopup(popup)
+          .addTo(map)
+          .togglePopup();
+      });
+    })();
+  </script>
+
+</body>
+</html>

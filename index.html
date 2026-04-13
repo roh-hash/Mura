@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e192f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mura" />
+  <meta name="format-detection" content="telephone=yes" />
+  <title>Mura Sushi &amp; Korean Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ========= HEADER / HERO ========= -->
+  <header class="hero">
+    <div class="hero__overlay"></div>
+
+    <nav class="nav">
+      <a class="nav__logo" href="#">
+        <span class="nav__logo-main">mura</span>
+        <span class="nav__logo-sub">korean / japanese / sushi</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="location.html">LOCATION</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero__content">
+      <h1 class="hero__title">MENU</h1>
+      <div class="hero__tabs">
+        <button class="pill pill--active" data-menu-tab="sushi">SUSHI</button>
+        <button class="pill" data-menu-tab="korean">KOREAN</button>
+        <button class="pill" data-menu-tab="ramen">RAMEN</button>
+        <button class="pill" data-menu-tab="drinks">DRINKS</button>
+      </div>
+    </div>
+
+    <a class="hero__scroll" href="#menu" aria-label="Scroll to menu">&#x2304;</a>
+  </header>
+
+  <!-- ========= FULL MENU ========= -->
+  <section class="menu" id="menu">
+    <div class="menu__inner">
+      <div class="menu__header">
+        <span class="menu__eyebrow">THE FULL MENU</span>
+        <h2 class="menu__title">EAT WITH US</h2>
+        <p class="menu__intro">Korean &middot; Japanese &middot; Sushi &mdash; crafted fresh at 1793 E 10th Street.</p>
+      </div>
+
+      <div class="menu__tabs">
+        <button class="pill pill--active" data-menu-tab="sushi" data-scroll-on-click="false">SUSHI</button>
+        <button class="pill" data-menu-tab="korean" data-scroll-on-click="false">KOREAN</button>
+        <button class="pill" data-menu-tab="ramen" data-scroll-on-click="false">NOODLES &amp; RAMEN</button>
+        <button class="pill" data-menu-tab="drinks" data-scroll-on-click="false">DRINKS &amp; SWEETS</button>
+      </div>
+
+      <div id="menu-content" class="menu__content"></div>
+    </div>
+  </section>
+
+  <!-- ========= WHITE SECTION ========= -->
+  <section class="showcase">
+    <div class="showcase__gallery">
+      <button class="showcase__arrow showcase__arrow--left" aria-label="Previous">&#10094;</button>
+      <div class="showcase__frames">
+        <div class="showcase__frame showcase__frame--yellow">
+          <img src="images/mura_pic.webp" alt="Mura dishes" style="object-position: 0% 50%;" />
+        </div>
+        <div class="showcase__frame showcase__frame--red">
+          <img src="images/murapic2.jpg" alt="Assorted sushi rolls" />
+        </div>
+        <div class="showcase__frame showcase__frame--orange">
+          <img src="images/mura_pic.webp" alt="Mura dishes" style="object-position: 100% 50%;" />
+        </div>
+      </div>
+      <button class="showcase__arrow showcase__arrow--right" aria-label="Next">&#10095;</button>
+    </div>
+
+    <div class="showcase__actions">
+      <a class="btn btn--dark" href="#menu">VIEW FULL MENU</a>
+    </div>
+
+    <div class="delivery">
+      <a class="delivery__btn delivery__btn--uber"
+         href="https://www.ubereats.com/store/mura-korean-sushi-restaurant/xZxuGig-RBO_RkqE9jNN1A?diningMode=DELIVERY&ps=1&surfaceName="
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Order on Uber Eats">
+        <span class="delivery__label">Order on</span>
+        <span class="delivery__brand">Uber Eats</span>
+        <span class="delivery__arrow">&rarr;</span>
+      </a>
+      <a class="delivery__btn delivery__btn--grubhub"
+         href="https://www.grubhub.com/restaurant/mura-korean-japanese-sushi-restaurant-1793-e-10th-street-bloomington/7571720?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&pickup=true&rwg_token=AFd1xnEQTc3FMuh2R-6Ad4xJG1T8Votwxi02w0HT1ZHy1_SOWpt4OmqaGiDIYC1bhu2gPhrfBYEVji30zIVQiYXDuHlk0Z8i5w%3D%3D"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Order on Grubhub">
+        <span class="delivery__brand-gh">GRUBHUB</span>
+      </a>
+      <a class="delivery__btn delivery__btn--doordash"
+         href="https://www.doordash.com/store/mura-sushi-bloomington-2163307/2322511/?pickup=true&rwg_token=AFd1xnEi9Vo7kn2S2-PbUIhBkyfEqRiv8_DAS-J-HcWqJDKl2eAtn9eahwrEcLCpDYcub42YE0iOUj4jdWk4lSPW3aqG3wlsCA==&utm_campaign=gpa"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Order on DoorDash">
+        <span class="delivery__brand-dd">DOORDASH</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========= REVIEWS ========= -->
+  <section class="reviews" id="reviews">
+    <div class="reviews__inner">
+      <div class="reviews__header">
+        <span class="reviews__eyebrow">GUEST REVIEWS</span>
+        <h2 class="reviews__title">WHAT DINERS SAY</h2>
+        <p class="reviews__intro">Hear from people who've eaten with us. Every rating below is from a real Google review of Mura.</p>
+      </div>
+
+      <div class="reviews__grid">
+
+        <article class="review-card">
+          <header class="review-card__head">
+            <div class="review-card__avatar" aria-hidden="true">AG</div>
+            <div>
+              <p class="review-card__name">Andrew Graham</p>
+              <p class="review-card__meta">5 months ago &middot; Dinner</p>
+            </div>
+          </header>
+          <div class="review-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="review-card__body">&ldquo;Absolutely stellar food. I have visited Mura about 5 times now, grabbing a different dish for each visit. Every time I have visited the food was great and the atmosphere was super cozy. Will definitely be a repeating customer!&rdquo;</p>
+          <p class="review-card__tags">Food 5/5 &middot; Service 5/5 &middot; Atmosphere 5/5</p>
+        </article>
+
+        <article class="review-card">
+          <header class="review-card__head">
+            <div class="review-card__avatar" aria-hidden="true">P</div>
+            <div>
+              <p class="review-card__name">Peyton</p>
+              <p class="review-card__meta">4 months ago &middot; Dine in</p>
+            </div>
+          </header>
+          <div class="review-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="review-card__body">&ldquo;Great atmosphere here! If you like kpop and korean drama, you'll love the vibes. My partner and I come for half our date nights. Some of the best food we've had in town: japchae, deep fried chicken cutlet, king kani roll, army stew.&rdquo;</p>
+          <p class="review-card__tags">Food 5/5 &middot; Service 5/5 &middot; Atmosphere 5/5</p>
+        </article>
+
+        <article class="review-card">
+          <header class="review-card__head">
+            <div class="review-card__avatar" aria-hidden="true">CC</div>
+            <div>
+              <p class="review-card__name">Caton Clark</p>
+              <p class="review-card__meta">2 months ago &middot; Dinner</p>
+            </div>
+          </header>
+          <div class="review-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="review-card__body">&ldquo;This was one of the best meals I've ever had. The yaki soba with fried tofu was amazing; the tofu was the best tofu I've ever eaten. Our servers were attentive and wonderful too! 10/10 I totally recommend.&rdquo;</p>
+          <p class="review-card__tags">Food 5/5 &middot; Service 5/5</p>
+        </article>
+
+        <article class="review-card">
+          <header class="review-card__head">
+            <div class="review-card__avatar" aria-hidden="true">SM</div>
+            <div>
+              <p class="review-card__name">Spring McGarr</p>
+              <p class="review-card__meta">A month ago &middot; Local Guide</p>
+            </div>
+          </header>
+          <div class="review-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="review-card__body">&ldquo;It's good for price and speed, server is very nice. Large vegetarian selection with clearly labeled dishes, and plenty of free parking. Easy place to enjoy a quiet dinner.&rdquo;</p>
+          <p class="review-card__tags">Food 5/5 &middot; Service 5/5 &middot; Atmosphere 5/5</p>
+        </article>
+
+      </div>
+
+      <p class="reviews__source">Reviews sourced from Google &middot; <a href="https://www.google.com/search?q=Mura+Sushi+%26+Korean+Restaurant+Bloomington" target="_blank" rel="noopener noreferrer">read more on Google</a></p>
+    </div>
+  </section>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="footer" id="location">
+    <div class="footer__inner">
+      <div class="footer__social">
+        <a href="https://www.facebook.com/people/Mura-Sushi-Korean-Restaurant-in-Bloomington-Indiana/100078651017884/?locale=en_GB"
+           target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/explore/locations/259487655964057/mura-sushi-korean-restaurant-in-bloomington-indiana/"
+           target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>LOCATION</h4>
+          <p>1793 E 10th St</p>
+          <p>Bloomington, IN &mdash; 47408</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>CONTACT</h4>
+          <p><a href="tel:8123694448">(812) 369-4448</a></p>
+        </div>
+
+        <div class="footer__col">
+          <h4>HOURS</h4>
+          <p><em>Monday &mdash; Thursday</em></p>
+          <p>11am &mdash; 10pm</p>
+          <p><em>Friday &mdash; Saturday</em></p>
+          <p>11am &mdash; 11:30pm</p>
+          <p><em>Sunday</em></p>
+          <p>12pm &mdash; 10pm</p>
+        </div>
+      </div>
+
+      <p class="footer__credit">Mura Sushi &amp; Korean Restaurant</p>
+    </div>
+  </footer>
+
+</body>
+</html>
